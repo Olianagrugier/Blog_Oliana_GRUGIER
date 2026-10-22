@@ -1,0 +1,966 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    color: white;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+
+/* LOGO */
+
+.logo a {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo-main {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.logo-sub {
+    margin-top: 5px;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: #999;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navigation a {
+    position: relative;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    color: #fff;
+
+    transition: 0.3s ease;
+}
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #e00000;
+
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ddd;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 700px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.15)
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10%;
+}
+
+
+/* si aucune image n'est encore disponible */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111 0%,
+            #222 45%,
+            #700 100%
+        );
+
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    padding-top: 90px;
+}
+
+.hero-small {
+    color: #e00000;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 10vw, 150px);
+
+    line-height: 0.82;
+
+    font-weight: 900;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 40px;
+}
+
+.hero-description {
+    max-width: 520px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #ddd;
+
+    margin-bottom: 40px;
+}
+
+
+/* NUMERO */
+
+.hero-number {
+    position: absolute;
+
+    right: 6%;
+    bottom: 10%;
+
+    font-size: 120px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,0.08);
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 30px;
+
+    padding: 18px 28px;
+
+    background: #e00000;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background: white;
+    color: #111;
+
+    transform: translateX(5px);
+}
+
+.button span {
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+    padding: 150px 10%;
+
+}
+
+.intro {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 80px;
+
+}
+
+.section-number {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #e00000;
+
+    padding-top: 10px;
+}
+
+.red-title {
+    color: #e00000;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    font-size: clamp(45px, 6vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 45px;
+}
+
+.intro p:not(.red-title) {
+    max-width: 650px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards-section {
+    padding: 120px 10%;
+
+    background: #f3f3f3;
+}
+
+.cards-header {
+    margin-bottom: 70px;
+}
+
+.cards-header h2 {
+    font-size: clamp(45px, 6vw, 85px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+
+.cards-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2px;
+
+    background: #111;
+}
+
+
+.portfolio-card {
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 45px;
+
+    background: white;
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+.portfolio-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 0;
+
+    background: #e00000;
+
+    transition: 0.4s ease;
+
+    z-index: 0;
+}
+
+.portfolio-card:hover::before {
+    height: 100%;
+}
+
+.portfolio-card:hover {
+    color: white;
+}
+
+.card-number,
+.portfolio-card h3,
+.card-arrow {
+    position: relative;
+    z-index: 1;
+}
+
+.card-number {
+    font-size: 12px;
+
+    color: #e00000;
+
+    font-weight: 800;
+
+    margin-bottom: 100px;
+}
+
+.portfolio-card h3 {
+    font-size: 42px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 40px;
+    bottom: 35px;
+
+    font-size: 35px;
+}
+
+
+/* =====================================================
+   CONTACT BANNER
+===================================================== */
+
+.contact-banner {
+    min-height: 500px;
+
+    padding: 100px 10%;
+
+    background: #111;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-banner h2 {
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+}
+
+.button-light {
+    background: white;
+
+    color: #111;
+}
+
+.button-light:hover {
+    background: #e00000;
+
+    color: white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    min-height: 130px;
+
+    padding: 40px 10%;
+
+    background: #050505;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+footer p {
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   PAGE INTERNE
+===================================================== */
+
+.inner-page {
+    padding-top: 90px;
+}
+
+
+/* HERO PAGE INTERNE */
+
+.page-hero {
+    min-height: 500px;
+
+    padding: 120px 10%;
+
+    background: #111;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.page-hero .red-title {
+    margin-bottom: 30px;
+}
+
+.page-hero h1 {
+    max-width: 1100px;
+
+    font-size: clamp(50px, 8vw, 120px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+
+/* CONTENU PAGE */
+
+.page-content {
+    padding: 120px 10%;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+.page-content h2 {
+    font-size: 50px;
+
+    margin-bottom: 30px;
+
+    letter-spacing: -2px;
+}
+
+.page-content p {
+    max-width: 850px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline {
+    margin-top: 70px;
+
+    border-left: 2px solid #ddd;
+
+    padding-left: 40px;
+}
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 70px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -49px;
+    top: 5px;
+
+    width: 15px;
+    height: 15px;
+
+    background: #e00000;
+
+    border-radius: 50%;
+}
+
+.timeline-year {
+    color: #e00000;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   COMPETENCES
+===================================================== */
+
+.skills {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 50px;
+
+    margin-top: 60px;
+}
+
+.skill {
+    padding: 30px;
+
+    border: 1px solid #ddd;
+}
+
+.skill-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-weight: 700;
+}
+
+.skill-percent {
+    color: #e00000;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 11px;
+
+    background: #ddd;
+}
+
+.skill-progress {
+    height: 100%;
+
+    background: #e00000;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-list {
+    margin-top: 60px;
+}
+
+.contact-item {
+    padding: 35px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-item span {
+    display: block;
+
+    color: #e00000;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.contact-item a,
+.contact-item p {
+    font-size: 25px;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   BOUTON RETOUR
+===================================================== */
+
+.back-home {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 50px;
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    color: #e00000;
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .navigation {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+
+        top: 90px;
+        left: 0;
+
+        width: 100%;
+
+        background: #111;
+
+        z-index: 999;
+
+        padding: 30px;
+
+        display: none;
+
+        flex-direction: column;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        padding: 18px 0;
+
+        color: white;
+
+        border-bottom: 1px solid #333;
+
+        text-transform: uppercase;
+
+        font-size: 13px;
+
+        font-weight: 600;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 75px;
+
+        padding: 0 25px;
+    }
+
+    .logo-main {
+        font-size: 19px;
+    }
+
+    .hero {
+        min-height: 650px;
+
+        padding: 0 25px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+
+        letter-spacing: -4px;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .section {
+        padding: 90px 25px;
+    }
+
+    .intro h2,
+    .cards-header h2 {
+        letter-spacing: -2px;
+    }
+
+    .cards-section {
+        padding: 80px 25px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card {
+        min-height: 300px;
+    }
+
+    .portfolio-card h3 {
+        font-size: 35px;
+    }
+
+    .contact-banner {
+        padding: 80px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 50px;
+    }
+
+    footer {
+        padding: 35px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .page-hero {
+        padding: 100px 25px;
+    }
+
+    .page-content {
+        padding: 80px 25px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+
+
+/* Le conteneur des passions */
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* Chaque encadré prend toute la largeur disponible */
+.skills .skill {
+    width: 100%;
+    max-width: none;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
+
+/* Le texte utilise toute la largeur du cadre */
+.skills .skill p {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
